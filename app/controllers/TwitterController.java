@@ -9,14 +9,14 @@ import twitter4j.auth.*;
 import java.io.*;
 import play.cache.Cache;
 
-
 public class TwitterController extends Controller {
 	  public Result callback() {
 	  	    try {
-	  	        Twitter twitter = TwitterFactory.getSingleton();
+	  	        Twitter twitter = (Twitter) Cache.get("twitter");
             RequestToken requestToken = (RequestToken) Cache.get("requestToken");
+            Cache.remove("requestToken");
   	  	        AccessToken accessToken = twitter.getOAuthAccessToken(requestToken, request().getQueryString("oauth_verifier"));
-  	  	        twitter.updateStatus("こんにちは");
+  	  	        Cache.set("accessToken", accessToken);
 	  	    } catch (TwitterException te) {
 	  	        te.printStackTrace();
 	      }
@@ -28,6 +28,7 @@ public class TwitterController extends Controller {
     	    	    Twitter twitter = new TwitterFactory().getInstance();
             RequestToken requestToken = twitter.getOAuthRequestToken();
             Cache.set("requestToken", requestToken);
+            Cache.set("twitter", twitter);
             return redirect(requestToken.getAuthorizationURL());
     	    } catch(TwitterException te) {
     	    	    te.printStackTrace();
