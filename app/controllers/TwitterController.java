@@ -2,7 +2,7 @@ package controllers;
 
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.protectedIndex;
+import views.html.*;
 import java.util.List;
 import twitter4j.*;
 import twitter4j.auth.*;
@@ -34,5 +34,10 @@ public class TwitterController extends Controller {
     	    	    te.printStackTrace();
     	    	    return redirect("/");
     	    }
+    }
+
+    public Result follow() {
+    	    System.out.println(request().getQueryString("tweetText"));
+    			return ok(protectedIndex.render());
     }
 }
