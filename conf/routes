@@ -8,10 +8,8 @@ GET     /                           controllers.HomeController.index
 #Social
 GET     /login                      controllers.TwitterController.login
 GET     /twitter/callback           controllers.TwitterController.callback
-
-# pac4j
-# GET         /callback                         org.pac4j.play.CallbackController.callback()
-# GET         /logout                           org.pac4j.play.LogoutController.logout()
+GET     /twitter/follow             controllers.TwitterController.follow
+GET     /twitter/protectedIndex     controllers.TwitterController.protectedIndex
 
 # An example controller showing how to use dependency injection
 # GET     /count                      controllers.CountController.count

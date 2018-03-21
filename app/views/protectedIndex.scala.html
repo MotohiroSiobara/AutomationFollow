@@ -1,3 +1,11 @@
-@main("テストページ") {
-    <h1>ログイン</h1>
+@import b3.vertical.fieldConstructor
+
+@main("ワード登録") {
+    @b3.form(routes.TwitterController.follow, 'class -> "form-group") {
+        <div class="col-sm-offset-0 col-sm-12">
+            <label for="tweetText">フォローしたいワードを入力してください</label>
+            <input type="text" name="tweetText">
+            @b3.submit('class -> "btn btn-default"){ <span class="glyphicon glyphicon-globe"></span> フォローする}
+        </div>
+  　}
 }
