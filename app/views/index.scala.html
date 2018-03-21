@@ -1,5 +1,6 @@
 @(message: String)
+@import b3.vertical.fieldConstructor
 
 @main("index") {
-    <a href="@controllers.routes.TwitterController.login()">Twitter Login</a>
+    @b3.buttonType("submit", 'class -> "btn btn-default"){ <a href="@controllers.routes.TwitterController.login()"><span class="glyphicon glyphicon-ok"></span></a> Twitter Login }
 }
