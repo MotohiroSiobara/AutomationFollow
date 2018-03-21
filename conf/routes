@@ -9,6 +9,7 @@ GET     /                           controllers.HomeController.index
 GET     /login                      controllers.TwitterController.login
 GET     /twitter/callback           controllers.TwitterController.callback
 GET     /twitter/follow             controllers.TwitterController.follow
+GET     /twitter/protectedIndex     controllers.TwitterController.protectedIndex
 
 # An example controller showing how to use dependency injection
 # GET     /count                      controllers.CountController.count
