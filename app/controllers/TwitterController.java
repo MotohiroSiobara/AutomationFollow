@@ -74,6 +74,7 @@ public class TwitterController extends Controller {
     	    } catch(TwitterException te) {
     	    			te.printStackTrace();
     	    }
+    	    Cache.remove("twitter");
     			return redirect("/twitter/protectedIndex");
     }
 }
