@@ -1,0 +1,17 @@
+@(registerForm: Form[User])
+
+@import helper._
+
+<!DOCTYPE html>
+  <title>Register form</title>
+  <h1>register form</h1>
+  @form(routes.AccountController.doRegister) {
+    @inputText(registerForm("userName"))
+    @inputPassword(registerForm("password"))
+    @inputText(registerForm("fullName"))
+    <input type="submit" value="submit" >
+  }
+
+  @if(flash.get("exception") != null){
+    <p>@flash.get("exception")</p>
+  }

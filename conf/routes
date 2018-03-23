@@ -4,6 +4,11 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
+GET     /register                   controllers.AccountController.register
+POST    /api/register               controllers.AccountController.doRegister
+GET     /login                      controllers.LoginController.login
+GET     /logout                     controllers.LoginController.logout
+POST    /api/doLogin                controllers.LoginController.doLogin
 
 #Social
 GET     /login                      controllers.TwitterController.login

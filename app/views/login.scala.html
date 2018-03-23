@@ -1,0 +1,8 @@
+<title>Login form</title>
+<h1>login form</h1>
+<form action="@routes.LoginController.doLogin" method="POST">
+  <input type="text" name="userName" />
+  <input type="password" name="password" />
+  <input type="submit" value="login" />
+</form>
+@if(flash.get("message") != null){<p>@flash.get("message")</p>}

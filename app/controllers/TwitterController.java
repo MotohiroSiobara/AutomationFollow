@@ -1,6 +1,7 @@
 package controllers;
 
 import play.mvc.Controller;
+import models.*;
 import play.mvc.Result;
 import views.html.*;
 import java.util.List;

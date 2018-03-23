@@ -16,6 +16,10 @@
         <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
     </head>
     <body>
+        @if(session.get("id") != null) {
+            <h3>会員専用コンテンツ</h3>
+  	          <p>会員専用情報<p>
+				}
         @* And here's where we render the `Html` object containing
          * the page content. *@
         @content
